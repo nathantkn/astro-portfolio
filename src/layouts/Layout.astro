@@ -1,0 +1,32 @@
+---
+import NavBar from "../components/NavBar.astro"
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content="Nathan Trinh's Portfolio.">
+		<title>Nathan Trinh</title>
+	</head>
+	<body>
+		<div class="flex justify-end md:justify-center gap-1 items-center">
+			<NavBar/>
+		</div>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		max-width: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+</style>

@@ -1,0 +1,13 @@
+---
+import "../styles/global.css";
+import Introduction from '../components/Introduction.astro';
+import Layout from '../layouts/Layout.astro';
+import background from '../assets/background.gif';
+import newbackground from '../assets/new-bg.gif';
+---
+
+<div class="h-230 bg-cover bg-center" style={`background-image: url(${newbackground.src});`}>
+	<Layout>
+		<Introduction />
+	</Layout>
+</div>
