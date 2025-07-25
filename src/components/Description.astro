@@ -1,46 +1,42 @@
----
-// Updated Description component with horizontal text rows and photo frames
----
-
 <div class="min-h-screen flex items-center justify-center px-6 md:px-12">
     <div class="max-w-6xl mx-auto text-center">
         <div class="space-y-16">
-            <!-- About Section Title -->
-            <h2 class="text-6xl font-bold text-white font-poppins m-12">About Me</h2>
+            <!-- About Me -->
+            <h2 class="text-6xl font-bold text-white font-dancing m-12">About Me</h2>
             
             <div class="space-y-6">
                 <div class="max-w-5xl mx-auto">
                     <p class="text-2xl text-gray-200 leading-relaxed text-center pb-5">
                         I'm Nathan, a Computer Science senior at the University of Illinois Chicago.
-                        
+                        Graduating in May 2026, I'm currently looking for <span class="text-red-400 font-semibold">SWE Summer 2026 Internships!</span>
                     </p>
                     <p class="text-2xl text-gray-200 leading-relaxed text-center pb-5">
                         I'm currently a Teaching Assistant for UIC's Data Structures course, where I love helping others grow their skills and passion for coding. 
-                        I will also be serving as SparkHacks' 2026 Web Development Lead, leading the design and development of the hackathon's website.
+                        I will also be serving as <span class="text-red-400 font-semibold">SparkHacks' 2026 Web Development Lead</span>, leading the design and development of the hackathon's website.
                     </p>
                     <p class="text-2xl text-gray-200 leading-relaxed text-center pb-5">
-                        I’ve also enjoyed participating in hackathons the past year, with my most recent achievement being a win at Northwestern's WildHacks 2025!
+                        I've also enjoyed participating in hackathons the past year, with my most recent achievement being a win at Northwestern's WildHacks 2025!
                     </p>
             </div>
 
             <!-- Photos -->
             <div class="flex items-center justify-center gap-8 md:gap-12">
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20">
-                        <div class="w-60 h-85 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
-                            <img src="sparkhacks2025.JPG" class="w-full h-full object-cover rounded-lg">
-                        </div>
+                <div class="photo-frame photo-frame-purple">
+                    <div class="w-60 h-85 glass rounded-2xl shadow-xl overflow-hidden">
+                        <img src="sparkhacks2025.JPG" class="w-full h-full object-cover rounded-lg">
+                    </div>
                     <p class="text-center text-gray-300 text-sm italic mt-2">Working for SparkHacks</p>
                 </div>
 
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-pink-500/20">
-                    <div class="w-140 h-95 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+                <div class="photo-frame photo-frame-pink">
+                    <div class="w-140 h-95 glass rounded-2xl shadow-xl overflow-hidden">
                         <img src="wildhacks2025.jpg" class="w-full h-full object-cover rounded-lg">
                     </div>
                     <p class="text-center text-gray-300 text-sm italic mt-2">My hackathon win @ WildHacks 2025!</p>
                 </div>
 
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20">
-                    <div class="w-60 h-85 bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+                <div class="photo-frame photo-frame-blue">
+                    <div class="w-60 h-85 glass rounded-2xl shadow-xl overflow-hidden">
                         <img src="hackillinois2025.JPG" class="w-full h-full object-cover rounded-lg">
                     </div>
                     <p class="text-center text-gray-300 text-sm italic mt-2">Testing at 5AM during HackIllinois</p>
@@ -54,69 +50,68 @@
                         I enjoy using technology to create meaningful impact, whether by building tools that improve lives, contributing to mission-driven teams, or learning more about AI and machine learning.
                     </p>
                     <p class="text-2xl text-gray-200 leading-relaxed text-center">
-                        I’m always looking for opportunities, such as internships, research, or collaborative projects, where I can keep growing, building, and making positive impact through tech.
+                        I'm always looking for opportunities, such as internships, research, or collaborative projects, where I can keep growing, building, and making positive impact through tech.
                     </p>
                 </div>
             </div>
 
-            <!-- Skills Section -->
+            <!-- Skills -->
             <div class="mt-16">
-                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 shadow-xl">
+                <div class="glass py-12 pr-3 shadow-xl">
                     <h3 class="text-2xl font-bold text-white mb-6 text-center">Technical Skills</h3>
                     <div class="grid md:grid-cols-3 gap-6">
                         <div class="space-y-3">
                             <h4 class="text-lg font-semibold text-purple-300">Languages</h4>
                             <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1 bg-purple-500/30 text-purple-200 rounded-full text-sm border border-purple-400/40">Python</span>
-                                <span class="px-3 py-1 bg-blue-500/30 text-blue-200 rounded-full text-sm border border-blue-400/40">C/C++</span>
-                                <span class="px-3 py-1 bg-green-500/30 text-green-200 rounded-full text-sm border border-green-400/40">Java</span>
-                                <span class="px-3 py-1 bg-yellow-500/30 text-yellow-200 rounded-full text-sm border border-yellow-400/40">JavaScript</span>
-                                <span class="px-3 py-1 bg-red-500/30 text-red-200 rounded-full text-sm border border-red-400/40">SQL</span>
-                                <span class="px-3 py-1 bg-gray-500/30 text-gray-200 rounded-full text-sm border border-gray-400/40">Dart</span>
-                                <span class="px-3 py-1 bg-teal-500/30 text-teal-200 rounded-full text-sm border border-teal-400/40">PHP</span>
-                                <span class="px-3 py-1 bg-orange-500/30 text-orange-200 rounded-full text-sm border border-orange-400/40">Go</span>
+                                <span class="skill-badge bg-purple-500/30 text-purple-200 border-purple-400/40">Python</span>
+                                <span class="skill-badge bg-blue-500/30 text-blue-200 border-blue-400/40">C/C++</span>
+                                <span class="skill-badge bg-green-500/30 text-green-200 border-green-400/40">Java</span>
+                                <span class="skill-badge bg-yellow-500/30 text-yellow-200 border-yellow-400/40">JavaScript</span>
+                                <span class="skill-badge bg-red-500/30 text-red-200 border-red-400/40">SQL</span>
+                                <span class="skill-badge bg-gray-500/30 text-gray-200 border-gray-400/40">Dart</span>
+                                <span class="skill-badge bg-teal-500/30 text-teal-200 border-teal-400/40">PHP</span>
+                                <span class="skill-badge bg-orange-500/30 text-orange-200 border-orange-400/40">Go</span>
                             </div>
                         </div>
                         <div class="space-y-3">
                             <h4 class="text-lg font-semibold text-blue-300">Frameworks</h4>
                             <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1 bg-cyan-500/30 text-cyan-200 rounded-full text-sm border border-cyan-400/40">React</span>
-                                <span class="px-3 py-1 bg-green-500/30 text-green-200 rounded-full text-sm border border-green-400/40">Node.js</span>
-                                <span class="px-3 py-1 bg-orange-500/30 text-orange-200 rounded-full text-sm border border-orange-400/40">Next.js</span>
-                                <span class="px-3 py-1 bg-purple-500/30 text-purple-200 rounded-full text-sm border border-purple-400/40">Vite</span>
-                                <span class="px-3 py-1 bg-yellow-500/30 text-yellow-200 rounded-full text-sm border border-yellow-400/40">Yii</span>
-                                <span class="px-3 py-1 bg-blue-500/30 text-blue-200 rounded-full text-sm border border-blue-400/40">Spring</span>
-                                <span class="px-3 py-1 bg-gray-500/30 text-gray-200 rounded-full text-sm border border-gray-400/40">Flask</span>
-                                <span class="px-3 py-1 bg-red-500/30 text-red-200 rounded-full text-sm border border-red-400/40">Flutter</span>
-                                <span class="px-3 py-1 bg-purple-500/30 text-purple-200 rounded-full text-sm border border-purple-400/40">Bootstrap</span>
+                                <span class="skill-badge bg-cyan-500/30 text-cyan-200 border-cyan-400/40">React</span>
+                                <span class="skill-badge bg-green-500/30 text-green-200 border-green-400/40">Node.js</span>
+                                <span class="skill-badge bg-orange-500/30 text-orange-200 border-orange-400/40">Next.js</span>
+                                <span class="skill-badge bg-purple-500/30 text-purple-200 border-purple-400/40">Vite</span>
+                                <span class="skill-badge bg-yellow-500/30 text-yellow-200 border-yellow-400/40">Yii</span>
+                                <span class="skill-badge bg-blue-500/30 text-blue-200 border-blue-400/40">Spring</span>
+                                <span class="skill-badge bg-gray-500/30 text-gray-200 border-gray-400/40">Flask</span>
+                                <span class="skill-badge bg-red-500/30 text-red-200 border-red-400/40">Flutter</span>
+                                <span class="skill-badge bg-purple-500/30 text-purple-200 border-purple-400/40">Bootstrap</span>
                             </div>
                         </div>
                         <div class="space-y-3">
                             <h4 class="text-lg font-semibold text-pink-300">Technologies</h4>
                             <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="px-3 py-1 bg-pink-500/30 text-pink-200 rounded-full text-sm border border-pink-400/40">HTML/CSS</span>
-                                <span class="px-3 py-1 bg-indigo-500/30 text-indigo-200 rounded-full text-sm border border-indigo-400/40">Nginx</span>
-                                <span class="px-3 py-1 bg-teal-500/30 text-teal-200 rounded-full text-sm border border-teal-400/40">RESTful APIs</span>
-                                <span class="px-3 py-1 bg-red-500/30 text-red-200 rounded-full text-sm border border-red-400/40">JWT</span>
-                                <span class="px-3 py-1 bg-gray-500/30 text-gray-200 rounded-full text-sm border border-gray-400/40">OAuth</span>
-                                <span class="px-3 py-1 bg-yellow-500/30 text-yellow-200 rounded-full text-sm border border-yellow-400/40">MariaDB</span>
-                                <span class="px-3 py-1 bg-blue-500/30 text-blue-200 rounded-full text-sm border border-blue-400/40">SQLite</span>
-                                <span class="px-3 py-1 bg-purple-500/30 text-purple-200 rounded-full text-sm border border-purple-400/40">MySQL</span>
+                                <span class="skill-badge bg-pink-500/30 text-pink-200 border-pink-400/40">HTML/CSS</span>
+                                <span class="skill-badge bg-indigo-500/30 text-indigo-200 border-indigo-400/40">Nginx</span>
+                                <span class="skill-badge bg-teal-500/30 text-teal-200 border-teal-400/40">RESTful APIs</span>
+                                <span class="skill-badge bg-red-500/30 text-red-200 border-red-400/40">JWT</span>
+                                <span class="skill-badge bg-gray-500/30 text-gray-200 border-gray-400/40">OAuth</span>
+                                <span class="skill-badge bg-yellow-500/30 text-yellow-200 border-yellow-400/40">MariaDB</span>
+                                <span class="skill-badge bg-blue-500/30 text-blue-200 border-blue-400/40">SQLite</span>
+                                <span class="skill-badge bg-purple-500/30 text-purple-200 border-purple-400/40">MySQL</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Call to Action -->
             <div class="mt-16 space-y-6 pb-5">
                 <p class="text-xl md:text-2xl text-gray-200">Take a look at my projects and experience!</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="/projects" class="border-2 rounded-2xl px-8 py-4 border-purple-400 text-purple-300 hover:text-white hover:bg-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/25 text-lg">
-                        View My Work
+                    <a href="/projects" class="btn-hover-effect border-2 rounded-2xl px-8 py-4 border-purple-400 text-purple-300 hover:text-white hover:bg-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/25 text-lg">
+                        Projects
                     </a>
-                    <a href="/experience" class="border-2 rounded-2xl px-8 py-4 border-blue-400 text-blue-300 hover:text-white hover:bg-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 text-lg">
-                        My Experience
+                    <a href="/experience" class="btn-hover-effect border-2 rounded-2xl px-8 py-4 border-blue-400 text-blue-300 hover:text-white hover:bg-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 text-lg">
+                        Experience
                     </a>
                 </div>
             </div>

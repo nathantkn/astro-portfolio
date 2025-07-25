@@ -3,19 +3,19 @@ import "../styles/global.css";
 import Introduction from '../components/Introduction.astro';
 import Description from '../components/Description.astro';
 import Layout from '../layouts/Layout.astro';
-import background from '../assets/bg.gif';
+import background from '../assets/new-bg.gif';
 ---
 
 <div class="relative">
     <Layout>
-        <section id="introduction" class="relative min-h-screen bg-cover bg-center" 
+        <section id="introduction" class="relative min-h-screen bg-cover bg-center bg-fixed" 
                 style={`background-image: url(${background.src});`}>
             <div id="introduction-content" class="relative z-10 transition-opacity duration-300">
                 <Introduction />
             </div>
         </section>
         
-        <section id="description" class="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-800">
+        <section id="description" class="relative bg-gradient-to-br from-slate-900 via-gray-800 to-slate-800">
             <div id="description-content" class="relative z-10 transition-opacity duration-300 opacity-0">
                 <Description />
             </div>
@@ -59,33 +59,11 @@ import background from '../assets/bg.gif';
 </script>
 
 <style>
-    html {
-        scroll-behavior: smooth;
-    }
-    
-    body {
-        overflow-x: hidden;
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* Enhanced background effects */
-    #introduction {
-        background-attachment: fixed;
-    }
-    
-    @media (max-width: 768px) {
-        #introduction {
-            background-attachment: scroll;
-        }
-    }
-
-    /* Ensure description section ends properly without extra space */
+    /* Only page-specific styles remain */
     #description {
         min-height: auto;
     }
 
-    /* Ensure description content doesn't get transformed/moved */
     #description-content {
         position: relative;
         transform: none !important;

@@ -1,0 +1,100 @@
+---
+import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components'
+
+const experienceList = [
+    {
+        date:"May 2025 - Present", 
+        role:"Research Assistant", 
+        company:"UIC ELiCIT Lab", 
+        desc:[
+            "Design interactive user flow concepts to visualize AI reasoning for a privacy education tool through developing and testing early interface prototypes and sketches."
+        ]
+    },
+    {
+        date:"August 2024 - Present", 
+        role:"Undergraduate Teaching Assistant", 
+        company:"UIC College of Engineering", 
+        desc:[
+            "Mentor <strong>400+</strong> students in C++ data structures and algorithmic problem-solving, offering course material and project support during lecture assistance and weekly in-person office hours.",
+            "Assist in weekly lab sessions for <strong>30+</strong> students, covering complex concepts such as binary trees, hash tables, graph algorithms, and searching & sorting techniques.",
+            "Guide students in using tools such as Git, ASAN, and GoogleTest to improve coding efficiency, version control, and debugging practices in software development."
+        ]
+    },
+    {
+        date:"January 2024 - Present", 
+        role:"CS Tutor", 
+        company:"UIC Engineering Learning Center", 
+        desc:[
+            "Provide academic support and peer guidance availability to <strong>1500+</strong> students for multiple core Computer Science courses.",
+            "Enhance students’ understanding of intricate concepts through instruction, study techniques, and supplementary test preparation."
+        ]
+    },
+    {
+        date:"June 2024 - Aug 2024", 
+        role:"Software Developer Intern", 
+        company:"Viettel Digital", 
+        desc:[
+            "Developed RESTful APIs for user interaction in PHP, Spring and Yii for an integrated social network system, increasing engagement and connectivity for over <strong>24 million users</strong>.",
+            "Implemented JWT and OAuth 2.0 for secure, role-based API authentication and authorization across users, merchants, and admins, enhancing security and system performance.",
+            "Improved database performance by <strong>40%</strong> through optimized query optimization and API validation with Postman, while collaborating in Agile sprints to improve system scalability."
+        ]
+    },
+    {
+        date:"July 2023 - Aug 2023", 
+        role:"Software Developer Intern", 
+        company:"VISSOFT", 
+        desc:[
+            "Adapted the Bloom Filter algorithm for fast data retrieval, reducing lookup time and cutting memory usage by <strong>80%</strong> in a Java-based library management system with a MySQL backend.",
+            "Integrated the GoogleTest framework to develop 20+ unit tests, ensuring functionality through automated testing."
+        ]
+    }
+]
+
+---
+
+<Layout>
+    <div class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-800 text-white">
+        <div class="container mx-auto px-4 py-10">
+            <div class="flex flex-col gap-4 text-white text-xl w-full">
+                <h2 class="text-sky-700 font-bold font-dancing text-6xl pt-5">Experience</h2>
+                <div class="relative mt-5">
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-sky-700"></div>
+                    
+                    <div class="flex flex-col gap-10">
+                        {experienceList.map((item, index) => (
+                            <div class="flex flex-col pl-8 relative">
+                                <div class="absolute -left-[0.4rem] w-4 h-4 rounded-full bg-sky-700 mt-2"></div>
+                                <h3 class="text-2xl font-bold font-poppins">{item.role}</h3>
+                                <p class="text-lg text-gray-300">{item.company}</p>
+                                <p class="text-sm text-gray-500">{item.date}</p>
+                                <ul class="mt-2 text-base space-y-1">
+                                    {item.desc.map((bullet, bulletIndex) => (
+                                        <li key={bulletIndex} class="flex items-start">
+                                            <span set:html={bullet}></span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Layout>
+
+
+
+<!-- <div class="relative border-l-4 border-sky-600 flex flex-col gap-10 mt-10 ml-4">
+    {experienceList.map((item, index) => (
+        <div class="flex flex-col pl-10 relative">
+            <div class="absolute -left-[0.6rem] w-4 h-4 rounded-full bg-sky-700 mt-3"></div>
+            <h3 class="text-2xl font-bold font-poppins">{item.role}</h3>
+            <p class="text-lg text-gray-300">{item.company}</p>
+            <p class="text-sm text-gray-500">{item.date}</p>
+            <p class="mt-2 text-base text-gray-100">{item.desc}</p>
+        </div>
+    ))}
+</div> -->

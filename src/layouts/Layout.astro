@@ -1,5 +1,6 @@
 ---
 import NavBar from "../components/NavBar.astro"
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -10,7 +11,7 @@ import NavBar from "../components/NavBar.astro"
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content="Nathan Trinh's Portfolio.">
-		<title>Nathan Trinh</title>
+		<title>Nathan Trinh's Portfolio</title>
 	</head>
 	<body>
 		<div class="flex justify-end md:justify-center gap-1 items-center">
@@ -19,14 +20,6 @@ import NavBar from "../components/NavBar.astro"
 		<main>
 			<slot />
 		</main>
+		<Footer/>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		max-width: 100%;
-		display: flex;
-		flex-direction: column;
-	}
-</style>
