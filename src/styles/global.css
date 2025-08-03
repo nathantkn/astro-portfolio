@@ -184,6 +184,7 @@ body {
   font-size: 0.875rem;
   border: 1px solid;
   transition: all 0.2s ease;
+  user-select: none;
 }
 
 .skill-badge:hover {
@@ -258,4 +259,85 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+@layer components {
+  .font-dancing {
+      background-size: 200% 200%;
+      animation: gradient-shift 3s ease-in-out infinite;
+    }
+    
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .category-btn {
+      @apply text-gray-300 bg-transparent hover:bg-slate-700/50;
+    }
+    
+    .category-btn.active {
+      @apply bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    }
+    
+    .project-card {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(56, 189, 248, 0.1);
+      border-color: rgba(56, 189, 248, 0.3);
+    }
+
+    .featured-project {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.7) 100%);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .featured-project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .tag {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      transition: all 0.2s ease;
+    }
+
+    .tag:hover {
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(59, 130, 246, 0.2) 100%);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .project-link {
+      transition: all 0.2s ease;
+    }
+
+    .project-link:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
+    }
+
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in-up 0.6s ease-out;
+    }
 }

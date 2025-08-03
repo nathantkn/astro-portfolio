@@ -23,15 +23,6 @@ const experienceList = [
         ]
     },
     {
-        date:"January 2024 - Present", 
-        role:"CS Tutor", 
-        company:"UIC Engineering Learning Center", 
-        desc:[
-            "Provide academic support and peer guidance availability to <strong>1500+</strong> students for multiple core Computer Science courses.",
-            "Enhance students’ understanding of intricate concepts through instruction, study techniques, and supplementary test preparation."
-        ]
-    },
-    {
         date:"June 2024 - Aug 2024", 
         role:"Software Developer Intern", 
         company:"Viettel Digital", 
@@ -39,6 +30,15 @@ const experienceList = [
             "Developed RESTful APIs for user interaction in PHP, Spring and Yii for an integrated social network system, increasing engagement and connectivity for over <strong>24 million users</strong>.",
             "Implemented JWT and OAuth 2.0 for secure, role-based API authentication and authorization across users, merchants, and admins, enhancing security and system performance.",
             "Improved database performance by <strong>40%</strong> through optimized query optimization and API validation with Postman, while collaborating in Agile sprints to improve system scalability."
+        ]
+    },
+    {
+        date:"January 2024 - Present", 
+        role:"CS Tutor", 
+        company:"UIC Engineering Learning Center", 
+        desc:[
+            "Provide academic support and peer guidance availability to <strong>1500+</strong> students for multiple core Computer Science courses.",
+            "Enhance students’ understanding of intricate concepts through instruction, study techniques, and supplementary test preparation."
         ]
     },
     {
@@ -56,45 +56,71 @@ const experienceList = [
 
 <Layout>
     <div class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-800 text-white">
-        <div class="container mx-auto px-4 py-10">
-            <div class="flex flex-col gap-4 text-white text-xl w-full">
-                <h2 class="text-sky-700 font-bold font-dancing text-6xl pt-5">Experience</h2>
-                <div class="relative mt-5">
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-sky-700"></div>
-                    
-                    <div class="flex flex-col gap-10">
-                        {experienceList.map((item, index) => (
-                            <div class="flex flex-col pl-8 relative">
-                                <div class="absolute -left-[0.4rem] w-4 h-4 rounded-full bg-sky-700 mt-2"></div>
-                                <h3 class="text-2xl font-bold font-poppins">{item.role}</h3>
-                                <p class="text-lg text-gray-300">{item.company}</p>
-                                <p class="text-sm text-gray-500">{item.date}</p>
-                                <ul class="mt-2 text-base space-y-1">
-                                    {item.desc.map((bullet, bulletIndex) => (
-                                        <li key={bulletIndex} class="flex items-start">
-                                            <span set:html={bullet}></span>
-                                        </li>
-                                    ))}
-                                </ul>
+        <div class="container mx-auto px-6 py-16 max-w-5xl">
+            <div class="text-center mb-16">
+                <h1 class="text-sky-400 font-bold font-dancing text-9xl mb-4 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
+                    Experience
+                </h1>
+                <div class="w-60 h-1 bg-gradient-to-r from-sky-500 to-blue-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative mt-5">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-sky-700"></div>
+                
+                <div class="flex flex-col gap-8">
+                    {experienceList.map((item, index) => (
+                        <div class="flex flex-col pl-8 relative">
+                            <div class="absolute -left-[0.6rem] w-6 h-6 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 mt-1 border-5 border-slate-800"></div>
+
+                            <div class="mb-3">
+                                <h3 class="text-2xl md:text-3xl font-bold font-poppins text-white mb-2 hover:text-sky-500 transition-colors duration-300">
+                                    {item.role}
+                                </h3>
+                                <p class="text-lg md:text-xl text-sky-300 font-medium flex items-center">
+                                    {item.company}
+                                </p>
                             </div>
-                        ))}
-                    </div>
+
+                            <p class="text-white text-sm font-semibold mb-4 rounded-full">
+                                {item.date}
+                            </p>
+
+                            <ul class="space-y-4">
+                                {item.desc.map((bullet, bulletIndex) => (
+                                    <li key={bulletIndex} class="flex items-start group/item">
+                                        <span class="text-gray-200 leading-relaxed text-base md:text-lg group-hover/item:text-white transition-colors duration-200" set:html={bullet}></span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
     </div>
+
+    <style>
+        .font-dancing {
+            background-size: 200% 200%;
+            animation: gradient-shift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .absolute.rounded-full {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+            }
+        }
+    </style>
 </Layout>
-
-
-
-<!-- <div class="relative border-l-4 border-sky-600 flex flex-col gap-10 mt-10 ml-4">
-    {experienceList.map((item, index) => (
-        <div class="flex flex-col pl-10 relative">
-            <div class="absolute -left-[0.6rem] w-4 h-4 rounded-full bg-sky-700 mt-3"></div>
-            <h3 class="text-2xl font-bold font-poppins">{item.role}</h3>
-            <p class="text-lg text-gray-300">{item.company}</p>
-            <p class="text-sm text-gray-500">{item.date}</p>
-            <p class="mt-2 text-base text-gray-100">{item.desc}</p>
-        </div>
-    ))}
-</div> -->

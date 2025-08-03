@@ -1,0 +1,67 @@
+---
+import SkillBadge from './SkillBadge.astro';
+
+const skillCategories = [
+    {
+        title: "Languages",
+        titleColor: "text-purple-300",
+        skills: [
+            { name: "Python", color: "purple" as const },
+            { name: "C/C++", color: "blue" as const },
+            { name: "Java", color: "green" as const },
+            { name: "JavaScript", color: "yellow" as const },
+            { name: "SQL", color: "red" as const },
+            { name: "Dart", color: "gray" as const },
+            { name: "PHP", color: "teal" as const },
+            { name: "Go", color: "orange" as const }
+        ]
+    },
+    {
+        title: "Frameworks",
+        titleColor: "text-blue-300",
+        skills: [
+            { name: "React", color: "cyan" as const },
+            { name: "Node.js", color: "green" as const },
+            { name: "Next.js", color: "orange" as const },
+            { name: "Vite", color: "purple" as const },
+            { name: "Yii", color: "yellow" as const },
+            { name: "Spring", color: "blue" as const },
+            { name: "Flask", color: "gray" as const },
+            { name: "Flutter", color: "red" as const },
+            { name: "Bootstrap", color: "purple" as const }
+        ]
+    },
+    {
+        title: "Technologies",
+        titleColor: "text-pink-300",
+        skills: [
+            { name: "HTML/CSS", color: "pink" as const },
+            { name: "Nginx", color: "indigo" as const },
+            { name: "RESTful APIs", color: "teal" as const },
+            { name: "JWT", color: "red" as const },
+            { name: "OAuth", color: "gray" as const },
+            { name: "MariaDB", color: "yellow" as const },
+            { name: "SQLite", color: "blue" as const },
+            { name: "MySQL", color: "purple" as const }
+        ]
+    }
+];
+
+---
+<div class="mt-16">
+    <div class="glass py-12 pr-3 shadow-xl">
+        <h3 class="text-2xl font-bold text-white mb-6 text-center">Technical Skills</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+            {skillCategories.map((category) => (
+                <div class="space-y-3">
+                    <h4 class={`text-lg font-semibold ${category.titleColor}`}>{category.title}</h4>
+                    <div class="flex flex-wrap gap-2 justify-center">
+                        {category.skills.map((skill) => (
+                            <SkillBadge skill={skill.name} color={skill.color} />
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</div>

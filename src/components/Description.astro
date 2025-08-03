@@ -1,3 +1,33 @@
+---
+import SkillsSection from './SkillsSection.astro';
+
+const photos = [
+    {
+        src: "sparkhacks2025.JPG",
+        alt: "Working for SparkHacks",
+        caption: "Working for SparkHacks",
+        width: "w-60",
+        height: "h-85",
+        colorTheme: "purple" as const
+    },
+    {
+        src: "wildhacks2025.jpg",
+        alt: "My hackathon win at WildHacks 2025",
+        caption: "My hackathon win @ WildHacks 2025!",
+        width: "w-140",
+        height: "h-95",
+        colorTheme: "pink" as const
+    },
+    {
+        src: "hackillinois2025.JPG",
+        alt: "Testing at 5AM during HackIllinois",
+        caption: "Testing at 5AM during HackIllinois",
+        width: "w-60",
+        height: "h-85",
+        colorTheme: "blue" as const
+    }
+];
+---
 <div class="min-h-screen flex items-center justify-center px-6 md:px-12">
     <div class="max-w-6xl mx-auto text-center">
         <div class="space-y-16">
@@ -11,11 +41,11 @@
                         Graduating in May 2026, I'm currently looking for <span class="text-red-400 font-semibold">SWE Summer 2026 Internships!</span>
                     </p>
                     <p class="text-2xl text-gray-200 leading-relaxed text-center pb-5">
-                        I'm currently a Teaching Assistant for UIC's Data Structures course, where I love helping others grow their skills and passion for coding. 
-                        I will also be serving as <span class="text-red-400 font-semibold">SparkHacks' 2026 Web Development Lead</span>, leading the design and development of the hackathon's website.
+                        I'm currently a <span class="text-blue-400 font-semibold">Teaching Assistant</span> for UIC's Data Structures course, where I love helping others grow their skills and passion for coding. 
+                        I will also be serving as SparkHacks' 2026 <span class="text-blue-400 font-semibold">Web Development Lead</span>, leading the design and development of the hackathon's website.
                     </p>
                     <p class="text-2xl text-gray-200 leading-relaxed text-center pb-5">
-                        I've also enjoyed participating in hackathons the past year, with my most recent achievement being a win at Northwestern's WildHacks 2025!
+                        I've also enjoyed participating in hackathons the past year, with my most recent achievement being a <span class="text-yellow-400 font-semibold">win</span> at Northwestern's <span class="text-green-400 font-semibold">WildHacks 2025</span>!
                     </p>
             </div>
 
@@ -46,7 +76,7 @@
             <div class="space-y-6">
                 <div class="max-w-5xl mx-auto">
                     <p class="text-2xl text-gray-200 leading-relaxed text-center p-5">
-                        I'm passionate about software engineering, AI, and full-stack/web development. 
+                        I'm passionate about <span class="text-green-300 font-semibold">software engineering</span>, <span class="text-red-300 font-semibold">AI</span>, and <span class="text-blue-300 font-semibold">full-stack/web development</span>. 
                         I enjoy using technology to create meaningful impact, whether by building tools that improve lives, contributing to mission-driven teams, or learning more about AI and machine learning.
                     </p>
                     <p class="text-2xl text-gray-200 leading-relaxed text-center">
@@ -55,54 +85,7 @@
                 </div>
             </div>
 
-            <!-- Skills -->
-            <div class="mt-16">
-                <div class="glass py-12 pr-3 shadow-xl">
-                    <h3 class="text-2xl font-bold text-white mb-6 text-center">Technical Skills</h3>
-                    <div class="grid md:grid-cols-3 gap-6">
-                        <div class="space-y-3">
-                            <h4 class="text-lg font-semibold text-purple-300">Languages</h4>
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="skill-badge bg-purple-500/30 text-purple-200 border-purple-400/40">Python</span>
-                                <span class="skill-badge bg-blue-500/30 text-blue-200 border-blue-400/40">C/C++</span>
-                                <span class="skill-badge bg-green-500/30 text-green-200 border-green-400/40">Java</span>
-                                <span class="skill-badge bg-yellow-500/30 text-yellow-200 border-yellow-400/40">JavaScript</span>
-                                <span class="skill-badge bg-red-500/30 text-red-200 border-red-400/40">SQL</span>
-                                <span class="skill-badge bg-gray-500/30 text-gray-200 border-gray-400/40">Dart</span>
-                                <span class="skill-badge bg-teal-500/30 text-teal-200 border-teal-400/40">PHP</span>
-                                <span class="skill-badge bg-orange-500/30 text-orange-200 border-orange-400/40">Go</span>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <h4 class="text-lg font-semibold text-blue-300">Frameworks</h4>
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="skill-badge bg-cyan-500/30 text-cyan-200 border-cyan-400/40">React</span>
-                                <span class="skill-badge bg-green-500/30 text-green-200 border-green-400/40">Node.js</span>
-                                <span class="skill-badge bg-orange-500/30 text-orange-200 border-orange-400/40">Next.js</span>
-                                <span class="skill-badge bg-purple-500/30 text-purple-200 border-purple-400/40">Vite</span>
-                                <span class="skill-badge bg-yellow-500/30 text-yellow-200 border-yellow-400/40">Yii</span>
-                                <span class="skill-badge bg-blue-500/30 text-blue-200 border-blue-400/40">Spring</span>
-                                <span class="skill-badge bg-gray-500/30 text-gray-200 border-gray-400/40">Flask</span>
-                                <span class="skill-badge bg-red-500/30 text-red-200 border-red-400/40">Flutter</span>
-                                <span class="skill-badge bg-purple-500/30 text-purple-200 border-purple-400/40">Bootstrap</span>
-                            </div>
-                        </div>
-                        <div class="space-y-3">
-                            <h4 class="text-lg font-semibold text-pink-300">Technologies</h4>
-                            <div class="flex flex-wrap gap-2 justify-center">
-                                <span class="skill-badge bg-pink-500/30 text-pink-200 border-pink-400/40">HTML/CSS</span>
-                                <span class="skill-badge bg-indigo-500/30 text-indigo-200 border-indigo-400/40">Nginx</span>
-                                <span class="skill-badge bg-teal-500/30 text-teal-200 border-teal-400/40">RESTful APIs</span>
-                                <span class="skill-badge bg-red-500/30 text-red-200 border-red-400/40">JWT</span>
-                                <span class="skill-badge bg-gray-500/30 text-gray-200 border-gray-400/40">OAuth</span>
-                                <span class="skill-badge bg-yellow-500/30 text-yellow-200 border-yellow-400/40">MariaDB</span>
-                                <span class="skill-badge bg-blue-500/30 text-blue-200 border-blue-400/40">SQLite</span>
-                                <span class="skill-badge bg-purple-500/30 text-purple-200 border-purple-400/40">MySQL</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <SkillsSection />
 
             <div class="mt-16 space-y-6 pb-5">
                 <p class="text-xl md:text-2xl text-gray-200">Take a look at my projects and experience!</p>

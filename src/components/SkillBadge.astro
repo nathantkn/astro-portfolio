@@ -1,0 +1,12 @@
+---
+export interface Props {
+  skill: string;
+  color: 'purple' | 'blue' | 'green' | 'yellow' | 'red' | 'gray' | 'teal' | 'orange' | 'cyan' | 'indigo' | 'pink';
+}
+
+const { skill, color } = Astro.props;
+---
+
+<span class={`skill-badge bg-${color}-500/30 text-${color}-200 border-${color}-400/40`}>
+    {skill}
+</span>
