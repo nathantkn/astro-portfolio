@@ -1,12 +1,67 @@
 ---
 export interface Props {
   skill: string;
-  color: 'purple' | 'blue' | 'green' | 'yellow' | 'red' | 'gray' | 'teal' | 'orange' | 'cyan' | 'indigo' | 'pink';
 }
 
-const { skill, color } = Astro.props;
+const { skill } = Astro.props;
+
+const skillColorMap: Record<string, string> = {
+  // Languages
+  "Python": "purple",
+  "C/C++": "blue", 
+  "Java": "green",
+  "JavaScript": "yellow",
+  "SQL": "red",
+  "Dart": "gray",
+  "PHP": "teal",
+  "Go": "orange",
+  
+  "React": "cyan",
+  "Node.js": "green",
+  "Node": "green",
+  "Next.js": "orange",
+  "Next": "orange",
+  "Vite": "purple",
+  "Yii": "yellow",
+  "Spring": "blue",
+  "Flask": "gray",
+  "Flutter": "red",
+  "Bootstrap": "purple",
+  "Express": "gray",
+  
+  "HTML/CSS": "pink",
+  "Nginx": "indigo",
+  "RESTful APIs": "teal",
+  "JWT": "red",
+  "OAuth": "gray",
+  "MariaDB": "yellow",
+  "SQLite": "blue",
+  "MySQL": "purple",
+  
+  "Ollama": "purple",
+  "OpenCV": "blue",
+  "NumPy": "yellow",
+  "Supabase": "orange",
+  "Raspberry Pi": "green"
+};
+
+const skillColor = skillColorMap[skill] || "gray";
+
+const colorClasses: Record<string, string> = {
+  purple: 'bg-purple-500/30 text-purple-200 border-purple-400/40',
+  blue: 'bg-blue-500/30 text-blue-200 border-blue-400/40',
+  green: 'bg-green-500/30 text-green-200 border-green-400/40',
+  yellow: 'bg-yellow-500/30 text-yellow-200 border-yellow-400/40',
+  red: 'bg-red-500/30 text-red-200 border-red-400/40',
+  gray: 'bg-gray-500/30 text-gray-200 border-gray-400/40',
+  teal: 'bg-teal-500/30 text-teal-200 border-teal-400/40',
+  orange: 'bg-orange-500/30 text-orange-200 border-orange-400/40',
+  cyan: 'bg-cyan-500/30 text-cyan-200 border-cyan-400/40',
+  indigo: 'bg-indigo-500/30 text-indigo-200 border-indigo-400/40',
+  pink: 'bg-pink-500/30 text-pink-200 border-pink-400/40'
+};
 ---
 
-<span class={`skill-badge bg-${color}-500/30 text-${color}-200 border-${color}-400/40`}>
+<span class={`skill-badge ${colorClasses[skillColor]}`}>
     {skill}
 </span>
