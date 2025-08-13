@@ -7,37 +7,35 @@ const links = [
 ];
 ---
 
-<nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full px-4 md:px-0 md:w-auto">
-  <div class="flex justify-center">
-    <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button" class="md:hidden fixed top-4 right-4 z-50 bg-slate-800/90 backdrop-blur-md border border-slate-600/50 rounded-2xl p-3 text-white hover:bg-slate-700/80 transition-all shadow-lg">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-button" class="md:hidden fixed top-4 right-4 z-50 bg-slate-800/90 backdrop-blur-md border border-slate-600/50 rounded-2xl p-3 text-white hover:bg-slate-700/80 transition-all shadow-lg">
+  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+  </svg>
+</button>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex gap-4 text-poppins text-white border px-4 py-1 rounded-2xl backdrop-blur-md">
-      {links.map(link => (
-        <a href={link.href} class="hover:text-sky-300 transition-colors px-2 py-1 rounded-lg hover:bg-slate-700/50">{link.name}</a>
-      ))}
-    </div>
-  </div>
-
-  <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/98 backdrop-blur-lg z-40 opacity-0 invisible transition-all duration-300 pointer-events-none">
-    <div class="flex flex-col items-center justify-center h-full gap-8 px-8">
-      <button id="close-menu" class="absolute top-6 right-6 text-white text-4xl hover:text-sky-300 transition-colors font-light">
-        ×
-      </button>
-      {links.map(link => (
-        <a href={link.href} class="mobile-menu-link text-white text-3xl font-poppins hover:text-sky-300 transition-all duration-300 py-4 px-8 rounded-xl hover:bg-slate-800/50 text-center w-full max-w-xs">
-          {link.name}
-        </a>
-      ))}
-    </div>
+<!-- Desktop Menu -->
+<nav class="hidden md:block fixed top-4 left-1/2 transform -translate-x-1/2 z-50">
+  <div class="md:flex gap-4 text-poppins text-white border px-4 py-1 rounded-2xl backdrop-blur-md">
+    {links.map(link => (
+      <a href={link.href} class="hover:text-sky-300 transition-colors px-2 py-1 rounded-lg hover:bg-slate-700/50">{link.name}</a>
+    ))}
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/98 backdrop-blur-lg z-40 opacity-0 invisible transition-all duration-300 pointer-events-none">
+  <div class="flex flex-col items-center justify-center h-full gap-8 px-8">
+    <button id="close-menu" class="absolute top-6 right-6 text-white text-4xl hover:text-sky-300 transition-colors font-light">
+      ×
+    </button>
+    {links.map(link => (
+      <a href={link.href} class="mobile-menu-link text-white text-3xl font-poppins hover:text-sky-300 transition-all duration-300 py-4 px-8 rounded-xl hover:bg-slate-800/50 text-center w-full max-w-xs">
+        {link.name}
+      </a>
+    ))}
+  </div>
+</div>
 
 <script>
   function initMobileMenu() {
