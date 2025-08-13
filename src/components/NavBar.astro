@@ -10,7 +10,7 @@ const links = [
 <nav class="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-full px-4 md:px-0 md:w-auto">
   <div class="flex justify-center">
     <!-- Mobile Menu Button -->
-    <button id="mobile-menu-button" class="md:hidden bg-slate-800/80 backdrop-blur-md border border-slate-600/50 rounded-2xl p-3 text-white hover:bg-slate-700/80 transition-all">
+    <button id="mobile-menu-button" class="md:hidden fixed top-4 right-4 z-50 bg-slate-800/90 backdrop-blur-md border border-slate-600/50 rounded-2xl p-3 text-white hover:bg-slate-700/80 transition-all shadow-lg">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
@@ -25,13 +25,15 @@ const links = [
   </div>
 
   <!-- Mobile Menu Overlay -->
-  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-slate-900/95 backdrop-blur-md opacity-0 invisible transition-all duration-300 pointer-events-none">
-    <div class="flex flex-col items-center justify-center h-full gap-8">
-      <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl hover:text-sky-300 transition-colors">
+  <div id="mobile-menu" class="md:hidden fixed top-0 left-0 w-full h-full bg-slate-900/98 backdrop-blur-lg z-40 opacity-0 invisible transition-all duration-300 pointer-events-none">
+    <div class="flex flex-col items-center justify-center h-full gap-8 px-8">
+      <button id="close-menu" class="absolute top-6 right-6 text-white text-4xl hover:text-sky-300 transition-colors font-light">
         ×
       </button>
       {links.map(link => (
-        <a href={link.href} class="mobile-menu-link text-white text-2xl font-poppins hover:text-sky-300 transition-colors py-3 px-6 rounded-xl hover:bg-slate-800/50">{link.name}</a>
+        <a href={link.href} class="mobile-menu-link text-white text-3xl font-poppins hover:text-sky-300 transition-all duration-300 py-4 px-8 rounded-xl hover:bg-slate-800/50 text-center w-full max-w-xs">
+          {link.name}
+        </a>
       ))}
     </div>
   </div>
@@ -49,12 +51,16 @@ const links = [
       mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.remove('opacity-0', 'invisible', 'pointer-events-none');
         mobileMenu.classList.add('opacity-100', 'visible');
+        // Prevent body scrolling when menu is open
+        document.body.style.overflow = 'hidden';
       });
 
-      // Close menu
+      // Close menu function
       const closeMenu = () => {
         mobileMenu.classList.add('opacity-0', 'invisible', 'pointer-events-none');
         mobileMenu.classList.remove('opacity-100', 'visible');
+        // Restore body scrolling
+        document.body.style.overflow = '';
       };
 
       closeMenuButton.addEventListener('click', closeMenu);
@@ -64,7 +70,7 @@ const links = [
         link.addEventListener('click', closeMenu);
       });
 
-      // Close menu when clicking outside
+      // Close menu when clicking on overlay background
       mobileMenu.addEventListener('click', (e) => {
         if (e.target === mobileMenu) {
           closeMenu();
@@ -73,7 +79,7 @@ const links = [
 
       // Close menu on escape key
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('invisible')) {
           closeMenu();
         }
       });
@@ -81,9 +87,6 @@ const links = [
   }
 
   // Initialize when DOM is loaded
-  document.addEventListener('DOMContentLoaded', initMobileMenu);
-  
-  // Also initialize immediately in case DOM is already loaded
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initMobileMenu);
   } else {
