@@ -45,23 +45,23 @@ const photos = [
             </div>
 
             <!-- Photos -->
-            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 lg:gap-12">
-                <div class="photo-frame photo-frame-purple">
-                    <div class="w-48 h-64 md:w-60 md:h-80 lg:w-60 lg:h-85 glass rounded-2xl shadow-xl overflow-hidden">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 lg:gap-8">
+                <div class="photo-frame photo-frame-purple w-64 md:w-48 lg:w-64">
+                    <div class="aspect-[3/4] w-full glass rounded-2xl shadow-xl overflow-hidden">
                         <img src="sparkhacks2025.JPG" class="w-full h-full object-cover rounded-lg" alt="Working for SparkHacks">
                     </div>
                     <p class="text-center text-gray-300 text-xs md:text-sm italic mt-2">Working for SparkHacks</p>
                 </div>
 
-                <div class="photo-frame photo-frame-pink">
-                    <div class="w-86 h-64 md:w-106 md:h-80 lg:w-140 lg:h-95 glass rounded-2xl shadow-xl overflow-hidden">
+                <div class="photo-frame photo-frame-pink w-96 md:w-[24rem] lg:w-[32rem]">
+                    <div class="aspect-[4/3] w-full glass rounded-2xl shadow-xl overflow-hidden">
                         <img src="wildhacks2025.jpg" class="w-full h-full object-cover rounded-lg" alt="My hackathon win at WildHacks 2025">
                     </div>
                     <p class="text-center text-gray-300 text-xs md:text-sm italic mt-2">My hackathon win @ WildHacks 2025!</p>
                 </div>
 
-                <div class="photo-frame photo-frame-blue">
-                    <div class="w-48 h-64 md:w-60 md:h-80 lg:w-60 lg:h-85 glass rounded-2xl shadow-xl overflow-hidden">
+                <div class="photo-frame photo-frame-blue w-64 md:w-48 lg:w-64">
+                    <div class="aspect-[3/4] w-full glass rounded-2xl shadow-xl overflow-hidden">
                         <img src="hackillinois2025.JPG" class="w-full h-full object-cover rounded-lg" alt="Testing at 5AM during HackIllinois">
                     </div>
                     <p class="text-center text-gray-300 text-xs md:text-sm italic mt-2">Testing at 5AM during HackIllinois</p>
@@ -83,13 +83,16 @@ const photos = [
             <SkillsSection />
 
             <div class="mt-8 md:mt-16 space-y-4 md:space-y-6 pb-5">
-                <p class="text-lg md:text-xl lg:text-2xl text-gray-200">Take a look at my projects and experience!</p>
+                <p class="text-lg md:text-xl lg:text-2xl text-gray-200">Take a look at my projects, my experience, or my leadership and activities!</p>
                 <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
                     <a href="/projects" class="w-full sm:w-auto btn-hover-effect border-2 rounded-2xl px-6 py-3 md:px-8 md:py-4 border-purple-400 text-purple-300 hover:text-white hover:bg-purple-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/25 text-base md:text-lg">
                         Projects
                     </a>
                     <a href="/experience" class="w-full sm:w-auto btn-hover-effect border-2 rounded-2xl px-6 py-3 md:px-8 md:py-4 border-blue-400 text-blue-300 hover:text-white hover:bg-blue-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 text-base md:text-lg">
                         Experience
+                    </a>
+                    <a href="/leadership" class="w-full sm:w-auto btn-hover-effect border-2 rounded-2xl px-6 py-3 md:px-8 md:py-4 border-green-400 text-green-300 hover:text-white hover:bg-green-500 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/25 text-base md:text-lg">
+                        Leadership
                     </a>
                 </div>
             </div>
