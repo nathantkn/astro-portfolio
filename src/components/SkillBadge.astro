@@ -7,42 +7,48 @@ const { skill } = Astro.props;
 
 const skillColorMap: Record<string, string> = {
   // Languages
-  "Python": "blue",
-  "C/C++": "cyan", 
+  "Python": "yellow",
+  "C/C++": "blue", 
   "Java": "red",
   "JavaScript": "yellow",
+  "TypeScript": "gray",
   "SQL": "orange",
-  "Dart": "gray",
-  "PHP": "blue",
-  "Go": "cyan",
+  "Dart": "cyan",
+  "PHP": "purple",
   
   "React": "cyan",
   "Node.js": "green",
-  "Node": "green",
-  "Next.js": "orange",
-  "Next": "orange",
-  "Vite": "purple",
-  "Yii": "yellow",
-  "Spring": "blue",
+  "Next.js": "gray",
+  "Vite": "yellow",
+  "Yii": "green",
+  "Spring": "green",
   "Flask": "gray",
-  "Flutter": "red",
+  "Flutter": "blue",
   "Bootstrap": "purple",
-  "Express": "gray",
+  "Jest": "red",
+  "Maven": "orange",
+  "Tailwind": "cyan",
+  "Astro": "indigo",
+  "Spline": "indigo",
   
   "HTML/CSS": "pink",
-  "Nginx": "indigo",
+  "Nginx": "green",
   "RESTful APIs": "teal",
-  "JWT": "red",
+  "JWT": "pink",
   "OAuth": "gray",
   "MariaDB": "yellow",
-  "SQLite": "blue",
-  "MySQL": "purple",
+  "SQLite": "orange",
+  "MySQL": "blue",
+  "Firebase": "red",
+  "Supabase": "green",
   
-  "Ollama": "purple",
-  "OpenCV": "blue",
+  "Ollama": "gray",
+  "OpenCV": "red",
   "NumPy": "yellow",
-  "Supabase": "orange",
-  "Raspberry Pi": "green"
+  "Raspberry Pi": "green",
+  "Postman": "orange",
+  "Express": "gray",
+
 };
 
 const skillColor = skillColorMap[skill] || "gray";
@@ -58,7 +64,7 @@ const colorClasses: Record<string, string> = {
   orange: 'bg-orange-500/30 text-orange-200 border-orange-400/40',
   cyan: 'bg-cyan-500/30 text-cyan-200 border-cyan-400/40',
   indigo: 'bg-indigo-500/30 text-indigo-200 border-indigo-400/40',
-  pink: 'bg-pink-500/30 text-pink-200 border-pink-400/40'
+  pink: 'bg-pink-500/30 text-pink-200 border-pink-400/40',
 };
 ---
 
