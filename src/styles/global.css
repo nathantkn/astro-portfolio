@@ -18,6 +18,13 @@
     font-display: block;
     src: url('/fonts/DancingScript-Bold.ttf') format('truetype');
   }
+  @font-face {
+    font-family: 'Northwell';
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/Northwell-Regular.ttf') format('truetype');
+  }
 }
 
 @theme {
@@ -49,6 +56,9 @@
 
     .text-poppins {
         font-family: 'Poppins', sans-serif;
+    }
+    .font-northwell {
+        font-family: 'Northwell', sans-serif;
     }
 }
 

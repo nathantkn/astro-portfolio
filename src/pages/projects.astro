@@ -6,50 +6,58 @@ import { Icon } from 'astro-icon/components'
 
 const projects = [
   {
-      title: "SparkHacks 2026 Main Website",
+      title: "SparkHacks 2026 Website",
+      startDate: "August 2025",
+      endDate: "Present",
       website: "https://sparkhacks.org/",
       repo: "https://github.com/SparkHacks/spark-web-2026",
       tags: ["Astro", "TypeScript", "Firebase", "Tailwind"],
-      img: "/sparkhacks_website.png",
+      img: "/projects/sparkhacks.png",
       desc: "The main website for SparkHacks 2026, currently in development. Coming soon!",
   },
   {
-      title: "Digital Privacy",
+      title: "Privacy Literacy",
+      endDate: "May 2025",
       website: "https://digital-privacy.vercel.app/",
       repo: "https://github.com/nathantkn/digital-privacy",
       tags: ["React", "Node.js", "Ollama"],
-      img: "/digital_privacy.png",
+      img: "/projects/privacy_literacy.png",
       desc: "Web-based sandbox designed to teach children how AI collect and use personal information. The app encourages children to explore the risks of data oversharing in a safe and engaging environment.",
   },
   {
       title: "TARIFFARM",
+      endDate: "March 2025",
       website: "https://devpost.com/software/idk-yet-o67hj8",
       repo: "https://github.com/nathantkn/tariffarm",
-      tags: ["React", "Next.js", "Supabase"],
-      img: "/tariffarm.jpg",
+      tags: ["Python", "React", "Next.js"],
+      img: "/projects/tariffarm.jpg",
       desc: "Allows users to calculate and visualize the full cost of importing commodities into the US. Third place winner for WildHacks 2025.",
   },
   {
     title: "Dynamic Bill Splitter",
+    endDate: "October 2025",
     website: "https://dynamic-bill-splitter.vercel.app/",
     repo: "https://github.com/nathantkn/astro-bill-splitter",
     tags: ["Astro", "TypeScript", "Vite", "Spline"],
-    img: "/bill_splitter.png",
+    img: "/projects/bill_splitter.png",
     desc: "Allows parties to split dining and grocery bills, based on the number of people and the items they bought or shared. Created for my own personal use for nights out with friends.",
   },
   {
     title: "Baldur: Debris Detection and Removal",
+    endDate: "February 2025",
     website: "https://devpost.com/software/baldur-8h2tmn",
     repo: "https://github.com/nathantkn/Baldur-HackIllinois",
-    tags: ["Python", "OpenCV", "Flutter", "Dart", "Raspberry Pi", "NumPy"],
-    img: "/baldur.jpg",
+    tags: ["Python", "OpenCV", "Flutter", "Dart", "Raspberry Pi"],
+    img: "/projects/baldur.jpg",
     desc: "An autonomous, AI-powered solution to detect and remove debris from fields using a Raspberry Pi-controlled vehicle equipped with a robotic claw. Submission for HackIllinois 2025.",
   },
   {
     title: "Music Ranker",
+    startDate: "May 2025",
+    endDate: "July 2025",
     repo: "https://github.com/nathantkn/music-rank",
     tags: ["React", "Node.js", "Express", "SQLite"],
-    img: "/music_ranker.png",
+    img: "/projects/music_ranker.png",
     desc: "Allows users to rank their favorite music tracks and discover new ones based on their preferences.",
   },
 ];
@@ -57,7 +65,7 @@ const projects = [
 
 <Layout title="Projects">
   <div class="min-h-screen bg-gradient-to-br from-slate-900 via-gray-800 to-slate-800 text-white">
-    <div class="container mx-auto px-6 py-16 max-w-5xl">
+    <div class="container mx-auto px-4 py-16 max-w-8xl">
       <!-- Header -->
       <div class="text-center mb-16">
         <h1 class="text-sky-400 font-bold font-dancing text-6xl md:text-8xl lg:text-9xl mb-4 bg-gradient-to-r from-sky-400 to-blue-500 bg-clip-text text-transparent">
@@ -67,7 +75,7 @@ const projects = [
       </div>
 
       <!-- Projects Grid -->
-      <div class="grid lg:grid-cols-2 gap-12">
+      <div class="grid lg:grid-cols-3 gap-12">
         {projects.map((project, index) => (
           <div class="featured-project rounded-2xl p-8 animate-fade-in h-full flex flex-col" style={`animation-delay: ${index * 0.2}s`}>
             <div class="flex flex-col gap-6 h-full">
@@ -77,6 +85,9 @@ const projects = [
                   <h2 class="text-2xl lg:text-3xl font-bold text-white hover:text-sky-400 transition-colors duration-300">
                     {project.title}
                   </h2>
+                  <p class="text-gray-400 text-sm mt-2">
+                    {project.startDate ? `${project.startDate} - ${project.endDate}` : project.endDate}
+                  </p>
                 </div>
                 <span class="flex gap-2">
                   <a href={project.website} class="project-link text-sky-400 hover:text-sky-300 text-3xl" target="_blank" rel="noopener noreferrer">
